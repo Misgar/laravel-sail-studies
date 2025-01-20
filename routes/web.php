@@ -12,3 +12,5 @@ Route::get('/ola', function(){
 });
 
 Route::get('/series', [SeriesController::class, 'index']);
+
+Route::get('/series/create/',[SeriesController::class, 'create']);

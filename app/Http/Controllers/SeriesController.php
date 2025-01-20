@@ -9,7 +9,7 @@ class SeriesController extends Controller
 {
         public function index(Request $request)
     {
-       return $response->query('id');
+
 
         $series = [
             'Punisher',
@@ -18,15 +18,14 @@ class SeriesController extends Controller
             'Breaking Bad'
         ];
 
-        $html = '<ol>';
-        foreach ($series as $serie)
-        {
-            $html .= "<li>$serie</li>";
-        }
+//        return view('series.index',compact('series'));
 
-        $html .= '</ol>';
+            return view('series.index')->with('series',$series);
+    }
 
-        // echo $html;
-        return $html;
+
+    public function create()
+    {
+        return view ('series.create');
     }
 }
